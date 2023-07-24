@@ -1,0 +1,32 @@
+﻿$(document).ready(function () {
+    
+});
+
+function ResponsiveTab(table) {
+    
+    if ($(window).width() <= 767) {
+        var thcount = $('table[id*="' + table + '"] th').length;
+
+        for (var i = 0; i < thcount; i++) {
+            var thtext = $('table[id*="' + table + '"] th').eq(i).text();
+            $('table[id*="' + table + '"] tr td:nth-child(' + (i + 1).toString() + ')').attr('data-label', thtext + ':-');
+        }
+
+        $('table[id*="' + table + '"]').css('table-layout', 'fixed');
+        $('table[id*="' + table + '"] th').css('display', 'none');
+        $('table[id*="' + table + '"] td').css('text-align', 'left');
+        $('table[id*="' + table + '"] td').css('width', '100%');
+        $('table[id*="' + table + '"] tr').css('border-bottom', '1px solid #cecece');
+        $('table[id*="' + table + '"] td div').css('width', '100%');
+
+
+        //if ($(window).width() <= 767) {
+           // $('table:not([id*="daysTable"])').find('td').attr('style', 'display: block;font-size: 10px;text-align: left');
+ $('table:not([id*="daysTable"])').find('td').css('display', 'block');
+            $('table:not([id*="daysTable"])').find('td').css('font-size', '10px');
+            $('table:not([id*="daysTable"])').find('td').css('text-align', 'left'); 
+
+            $('.RadTabStrip li').css('width', '100%');
+       // }
+    }
+}
